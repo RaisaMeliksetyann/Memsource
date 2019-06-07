@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Memsource Web Editor</title>
+        <link rel="stylesheet" href="css/styles.css?v=1.0">
+
+    </head>
+    <body>
+
+    <!-- Navigation Menu -->
+    <header>
+
+        <div class="header item">
+            Memsource Web Editor
+        </div>
+
+        <a class="item" href="/login">
+            login 
+        </a>
+        <a class="item" href="/projects">
+            projects list
+        </a>
+
+    </header>
+
+    <!-- Main Container -->
+    <main id="mainContainer"></main>
+
+
+    <!-- Error Template -->
+    <script id="error-template" type="text/x-handlebars-template">
+        <div class="">
+            <h3>{{title}}</h3>
+            <div>{{message}}</div>
+        </div>
+    </script>
+
+    <!-- Login Page Template -->
+    <script id="login-template" type="text/x-handlebars-template">
+        
+        <h3 class="pageTitle">Sign in to Memsource</h3>
+        <div>
+            <form class="credentialsForm">
+                <label for="userEmail">Email</label>
+                <input type="email" id="userEmail" class="ControlInput ControlInput--email" autocomplete="no" required>
+            
+                <label for="userPassword">Password</label>
+                <input type="password" id="userPassword" name="password" autocomplete="no" required>
+                
+                <input type="submit" value="Sign in">
+            </form>
+        </div>
+    </script>
+    
+    <!-- Projects List Template -->
+    <script id="projects-template" type="text/x-handlebars-template">
+        <h3 class="pageTitle">Projects List</h3>
+        <hr>
+
+        <table class="">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Source Language</th>
+                    <th>Target Language</th>
+                    <th>Status</th>
+                </tr>
+            </thead>
+            <tbody>
+                {{#each content}}
+                <tr>
+                    <th>{{name}}</th>
+                    <th>{{sourceLang}}</th>
+                    <th>{{targetLangs}}</th>
+                    <th>{{status}}</th>
+                </tr>
+                {{/each}}
+            </tbody>
+        </table>
+    </script>
+
+    <!-- JS Dependencies -->
+    <script src="scripts/jquery/dist/jquery.min.js"></script>
+    <script src="scripts/handlebars/dist/handlebars.min.js"></script>
+    <script src="scripts/vanilla-router/dist/vanilla-router.min.js"></script>
+    <script src="scripts/axios/dist/axios.min.js"></script>
+    <script src="js/scripts.js"></script>
+    </body>
+</html>
