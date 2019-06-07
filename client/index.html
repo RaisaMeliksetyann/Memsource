@@ -60,8 +60,7 @@
     <!-- Projects List Template -->
     <script id="projects-template" type="text/x-handlebars-template">
         <h3 class="pageTitle">Projects List</h3>
-        <hr>
-
+        
         <table class="">
             <thead>
                 <tr>
@@ -74,10 +73,10 @@
             <tbody>
                 {{#each content}}
                 <tr>
-                    <th>{{name}}</th>
-                    <th>{{sourceLang}}</th>
-                    <th>{{targetLangs}}</th>
-                    <th>{{status}}</th>
+                    <td>{{name}}</td>
+                    <td>{{sourceLang}}</td>
+                    <td>{{targetLangs}}</td>
+                    <td>{{status}}</td>
                 </tr>
                 {{/each}}
             </tbody>

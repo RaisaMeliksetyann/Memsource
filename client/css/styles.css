@@ -21,7 +21,6 @@
   /* Style the content */
   main {
     flex: 1;
-    background-color: #ddd;
     padding: 10px;
   }
   
@@ -56,4 +55,20 @@
     border-radius: 5px;
     background-color: #5a5454;
     padding: 20px;
+  }
+
+  /* style jobs table */
+  table {
+    border-collapse: collapse;
+    width: 90%;
+  }
+  
+  td, th {
+    border: 1px solid #ddd;
+    text-align: left;
+    padding: 8px;
+  }
+  
+  tr:nth-child(even) {
+    background-color: #ddd;
   }
