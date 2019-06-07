@@ -10,10 +10,9 @@ window.addEventListener('load', () => {
     const router = new Router({
         mode: 'history',
         page404: (path) => {
-        const html = errorTemplate({
-            color: 'yellow',
-            title: 'Error 404 - Page NOT Found!',
-            message: `The path '/${path}' does not exist on this site`,
+            const html = errorTemplate({
+                title: 'Error 404 - Page NOT Found!',
+                message: `The path '/${path}' does not exist`,
         });
         $mainContainer.html(html);
         },
@@ -34,7 +33,8 @@ window.addEventListener('load', () => {
 
         try {
             const response = await api.post('/auth/login', JSON.stringify(credentials));
-            localStorage.token = response.token || '';
+            localStorage.token = response.data.token || '';
+            localStorage.expires = response.data.expires;
         } catch (error) {
             console.log( error );
         } 
