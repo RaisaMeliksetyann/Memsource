@@ -12,10 +12,10 @@ window.addEventListener('load', () => {
         page404: (path) => {
             const html = errorTemplate({
                 title: 'Error 404 - Page NOT Found!',
-                message: `The path '/${path}' does not exist`,
-        });
-        $mainContainer.html(html);
-        },
+                message: `The path '/${path}' does not exist`
+            });
+            $mainContainer.html(html);
+        }
     });
 
     // API 
@@ -35,6 +35,9 @@ window.addEventListener('load', () => {
             const response = await api.post('/auth/login', JSON.stringify(credentials));
             localStorage.token = response.data.token || '';
             localStorage.expires = response.data.expires;
+            
+            //after successfull login redirect a user to projects list
+            router.navigateTo('/projects');
         } catch (error) {
             console.log( error );
         } 
@@ -54,7 +57,8 @@ window.addEventListener('load', () => {
     
     router.add('/projects', async () => {
 
-        if(localStorage && localStorage.token) {
+        if(localStorage && localStorage.token) 
+        {
             let html = projectsTemplate();
             $mainContainer.html(html);
 

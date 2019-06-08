@@ -15,9 +15,27 @@
   header {
     background-color: #333;
     color: #ddd;
-    padding: 10px;
   }
-  
+
+  a.menue-item {
+    display: inline-block;
+    width: auto;
+    padding: 15px;
+    overflow: hidden;
+    text-decoration: none;
+    color: inherit;
+    background-color: inherit;
+  }
+
+  a.menue-item:hover, a.active {
+    color: #333;
+    background-color: #ddd;
+  }
+
+  a.menue-item::after {
+    clear: both;
+  }
+
   /* Style the content */
   main {
     flex: 1;
@@ -71,4 +89,13 @@
   
   tr:nth-child(even) {
     background-color: #ddd;
+  }
+
+  /* general styles */
+  .float-left {
+    float: left;
+  }
+
+  .float-right {
+    float: right;
   }
