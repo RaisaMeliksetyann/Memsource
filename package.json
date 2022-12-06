@@ -20,7 +20,7 @@
     "express": "^4.17.1",
     "handlebars": "^4.1.2",
     "jquery": "^3.4.1",
-    "qs": "^6.7.0",
+    "qs": "^6.7.3",
     "vanilla-router": "^1.2.7"
   },
   "devDependencies": {
